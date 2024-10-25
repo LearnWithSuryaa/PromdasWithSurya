@@ -35,11 +35,11 @@ Sebelum menjalankan program, pastikan Anda telah menginstal GCC compiler dan `ma
 2. Untuk membangun dan menjalankan proyek, gunakan perintah berikut:
    ```bash
     make
-   ./bioskop
+   ./surya
 
 3. Jika Anda ingin membersihkan file objek dan executable, jalankan:
    ```bash
-   make clean
+   make sapu
 
 ## Struktur Proyek
    ```bash
