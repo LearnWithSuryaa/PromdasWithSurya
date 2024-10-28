@@ -109,7 +109,7 @@ int pilihFilm()
     while (1)
     {
         printf("Pilih film:\n1. Spiderman - Rp.%.0d\n2. Batman - Rp.%.0d\n3. Superman - Rp.%.0d\n4. Avengers - Rp.%.0d\n5. Joker - Rp.%.0d\n",
-               hargaFilm[0], hargaFilm[BATMAN], hargaFilm[SUPERMAN], hargaFilm[AVENGERS], hargaFilm[JOKER]);
+               hargaFilm[SPIDERMAN], hargaFilm[BATMAN], hargaFilm[SUPERMAN], hargaFilm[AVENGERS], hargaFilm[JOKER]);
         printf("Masukkan pilihan Anda (1-5): ");
 
         if (scanf("%d", &choice) != 1)
