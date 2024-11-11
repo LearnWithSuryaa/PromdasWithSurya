@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 #define RED "\033[0;31m"
 #define GREEN "\033[0;32m"
 #define RESET "\033[0m"
@@ -10,22 +9,8 @@ int main()
     char str[100];
     int i, j, unik, valid;
 
-    do
-    {
-        printf("\nMasukkan sebuah string (tanpa angka): ");
-        fgets(str, sizeof(str), stdin);
-
-        valid = 1;
-        for (i = 0; str[i] != '\0'; i++)
-        {
-            if (isdigit(str[i]))
-            {
-                printf(RED "\nError: Input tidak boleh mengandung angka.\n\n" RESET);
-                valid = 0;
-                break;
-            }
-        }
-    } while (!valid);
+    printf("\nMasukkan sebuah string: ");
+    fgets(str, sizeof(str), stdin);
 
     printf("\nKarakter unik dalam string:\n");
 
