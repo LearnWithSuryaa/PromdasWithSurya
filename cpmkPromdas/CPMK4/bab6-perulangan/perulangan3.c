@@ -25,31 +25,28 @@ int main()
 
         for (int i = 0; i < loop; i++)
         {
-            printf("Masukkan nilai ke %d: ", i + 1);
-            scanf("%d", &nilai);
+            do
+            {
+                printf("Masukkan nilai ke %d: ", i + 1);
+                scanf("%d", &nilai);
 
-            if (nilai > 0)
-            {
-                total += nilai;
-                countPositif++;
-            }
-            else
-            {
-                printf(RED "Masukkan nilai positif untuk menjumlahkan.\n" RESET);
-            }
+                if (nilai > 0)
+                {
+                    total += nilai;
+                    countPositif++;
+                }
+                else
+                {
+                    printf(RED "Masukkan nilai positif untuk menjumlahkan.\n" RESET);
+                }
+            } while (nilai <= 0);
         }
 
         printf(GREEN "\nTotal penjumlahan: %d\n" RESET, total);
 
-        if (countPositif > 0)
-        {
-            float rataRata = (float)total / countPositif;
-            printf(GREEN "Rata-rata nilai positif: %.2f\n", rataRata);
-        }
-        else
-        {
-            printf(RED "Tidak ada nilai positif untuk menghitung rata-rata.\n" RESET);
-        }
+        float rataRata = (float)total / countPositif;
+        printf(GREEN "Rata-rata nilai positif: %.2f\n", rataRata);
+
         do
         {
             printf(BLUE "\nApakah ANda ingin Mengulang Program? (y/n): " RESET);
@@ -63,6 +60,7 @@ int main()
                 printf(RED "\nERROR MASUKKAN INPUT DENGAN BENAR!\n" RESET);
             }
         } while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N');
+        
         if (choice != 'y' || choice != 'Y')
         {
             printf("\n");

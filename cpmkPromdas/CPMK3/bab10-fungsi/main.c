@@ -160,7 +160,7 @@
 }*/
 
 // deret fibonancci
-/*int main()
+int main()
 {
     int n;
     printf("Masukkan nilai n: ");
@@ -175,4 +175,4 @@
     printf("\n");
 
     return 0;
-}*/
+}
