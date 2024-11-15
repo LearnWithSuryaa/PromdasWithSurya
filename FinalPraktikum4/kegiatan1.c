@@ -13,12 +13,13 @@ void clearInputBuffer()
 
 int main()
 {
-    int bilangan, choice, jumlah, total;
-
+    int bilangan, choice, jumlah, total, valid, inputValid, index = 0;
+    
     do
     {
         jumlah = 0;
         total = 0;
+        valid = 1;
 
         printf("\nMasukkan transaksi selanjutnya (gunakan 0 untuk menyelesaikan):\n");
         while (1)
@@ -32,7 +33,16 @@ int main()
 
             if (bilangan <= 0)
             {
-                break;
+                if (valid && bilangan == 0)
+                {
+                    break;
+                }
+                else if (valid && bilangan != 0)
+                {
+                    printf(RED "Inputan tidak valid. mohon masukkan angka 0\n" RESET);
+                    clearInputBuffer();
+                    continue;
+                }
             }
 
             total += bilangan;
