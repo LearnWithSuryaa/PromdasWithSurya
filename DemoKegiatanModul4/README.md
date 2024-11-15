@@ -72,4 +72,4 @@ Jika Anda ingin berkontribusi pada proyek ini, Anda dapat:
 
 ## Penulis
 
-- Program ini dibuat oleh [SuryaHiperSomnia].
+- Program ini dibuat oleh [Suryahipersomniaa].
