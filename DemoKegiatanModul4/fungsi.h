@@ -1,5 +1,5 @@
-#ifndef BIOSKOP_H
-#define BIOSKOP_H
+#ifndef FUNGSI_H
+#define FUNGSI_H
 #define MAX_TRANSAKSI 100
 
 void clearInputBuffer();
