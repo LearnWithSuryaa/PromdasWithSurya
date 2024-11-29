@@ -26,11 +26,10 @@ Berikut daftar folder dan materi yang tersedia:
 
 | 📁 Folder              | ✨ Isi                                                             |
 |------------------------|-------------------------------------------------------------------|
-| `DemoKegiatanModul4`   | Contoh kode untuk kegiatan Modul 4.                              |
-| `FinalPraktikum4`      | Tugas akhir praktikum Modul 4.                                   |
-| `FinalPraktikum5`      | Tugas akhir praktikum Modul 5.                                   |
+| `DemoKegiatanModul4`   | Contoh program untuk Modul 4.                              |
 | `cpmkPromdas`          | Latihan khusus untuk mencapai capaian pembelajaran mata kuliah.  |
-| `demoKegiatanModul3`   | Contoh program untuk Modul 3.                                    |
+| `DemoKegiatanModul3`   | Contoh program untuk Modul 3.                                    |
+| `DemoKegiatanModul5`   | Contoh program untuk Modul 5.                                    |
 | `finalPraktikum1-5`    | Tugas akhir praktikum untuk Modul 1-5.                           |
 | `learnModul2`          | Penjelasan dan latihan untuk Modul 2.                            |
 
