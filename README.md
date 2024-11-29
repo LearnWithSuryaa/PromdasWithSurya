@@ -85,7 +85,8 @@ Ingin berkontribusi atau menemukan bug?
 
 Jika kamu menemui kendala, jangan ragu untuk bertanya:  
 - 💬 Kirim pesan melalui [Instagram](https://www.instagram.com/suryahipersonmia/).  
-- Buka diskusi di tab **Issues** di repo ini.
+- Buka diskusi di tab **Issues** di repo ini.  
+- 📧 Atau langsung kirim email ke saya di [LearnWithSuryaa](mailto:davindra514@gmail.com?subject=Pertanyaan%20Tentang%20Repo%20PromdasWithSurya&body=Halo%20Davindra,%0A%0ASaya%20memiliki%20pertanyaan%20terkait%20repo%20PromdasWithSurya%20dan%20ingin%20mendapatkan%20bantuan.%0A%0APertanyaan:%0A%0A%5BTuliskan%20pertanyaan%20Anda%20di%20sini%5D%0A%0ATerima%20kasih!).
 
 ---
 
