@@ -83,7 +83,7 @@ Masukkan nilai Kimia untuk Chicka (0-100): 89
 | Nama Mahasiswa     | Matematika | Fisika     | Kimia      | Rata-rata    |
 ----------------------------------------------------------------------------
 | Chicka             | 85.00      | 87.00      | 89.00      | 90.00        |
-| Surya              | 88.00      | 90.00      | .00      | 87.00        |
+| Surya              | 88.00      | 90.00      | .00        | 87.00        |
 ============================================================================
 Rata-rata per mata pelajaran:
   - Matematika: 86.50
