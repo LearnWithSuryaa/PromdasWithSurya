@@ -63,17 +63,17 @@ Sederhana, mudah digunakan, dan pastinya membantu banget untuk belajar coding C 
 
 ```
 Masukkan jumlah mahasiswa: 2
-Masukkan nama mahasiswa: Alice Smith
+Masukkan nama mahasiswa: Surya
 Nilai untuk Alice Smith:
-Masukkan nilai Matematika untuk Alice Smith (0-100): 88
-Masukkan nilai Fisika untuk Alice Smith (0-100): 90
-Masukkan nilai Kimia untuk Alice Smith (0-100): 92
+Masukkan nilai Matematika untuk Surya (0-100): 88
+Masukkan nilai Fisika untuk Surya (0-100): 90
+Masukkan nilai Kimia untuk Surya (0-100): 92
 
-Masukkan nama mahasiswa: John Doe
+Masukkan nama mahasiswa: Chicka
 Nilai untuk John Doe:
-Masukkan nilai Matematika untuk John Doe (0-100): 85
-Masukkan nilai Fisika untuk John Doe (0-100): 87
-Masukkan nilai Kimia untuk John Doe (0-100): 89
+Masukkan nilai Matematika untuk Chicka (0-100): 85
+Masukkan nilai Fisika untuk Chicka (0-100): 87
+Masukkan nilai Kimia untuk Chicka (0-100): 89
 ```
 
 #### **Output:**
@@ -82,8 +82,8 @@ Masukkan nilai Kimia untuk John Doe (0-100): 89
 ============================================================================
 | Nama Mahasiswa     | Matematika | Fisika     | Kimia      | Rata-rata    |
 ----------------------------------------------------------------------------
-| Surya              | 88.00      | 90.00      | 92.00      | 90.00        |
-| Chicka             | 85.00      | 87.00      | 89.00      | 87.00        |
+| Chicka             | 85.00      | 87.00      | 89.00      | 90.00        |
+| Surya              | 88.00      | 90.00      | .00      | 87.00        |
 ============================================================================
 Rata-rata per mata pelajaran:
   - Matematika: 86.50
