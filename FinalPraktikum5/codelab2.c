@@ -4,7 +4,8 @@ int main()
 {
     int penjualan[2][3] = {
         {5, 8, 6},
-        {3, 7, 9}};
+        {3, 7, 9},
+    };
 
     int totalPenjualan[3] = {0};
 
@@ -18,7 +19,7 @@ int main()
     {
         printf("Produk %c: %d\n", 'A' + produk, totalPenjualan[produk]);
     }
-    
+
     printf("\n");
 
     return 0;
