@@ -26,11 +26,11 @@ Berikut daftar folder dan materi yang tersedia:
 
 | 📁 Folder              | ✨ Isi                                                             |
 |------------------------|-------------------------------------------------------------------|
-| `DemoKegiatanModul4`   | Contoh program untuk Modul 4.                              |
 | `cpmkPromdas`          | Latihan khusus untuk mencapai capaian pembelajaran mata kuliah.  |
 | `DemoKegiatanModul3`   | Contoh program untuk Modul 3.                                    |
+| `DemoKegiatanModul4`   | Contoh program untuk Modul 4.                              |
 | `DemoKegiatanModul5`   | Contoh program untuk Modul 5.                                    |
-| `finalPraktikum1-5`    | Tugas akhir praktikum untuk Modul 1-5.                           |
+| `finalPraktikum1-6`    | Tugas akhir praktikum untuk Modul 1-6.                           |
 | `learnModul2`          | Penjelasan dan latihan untuk Modul 2.                            |
 
 > **Catatan:** Repositori ini akan terus diperbarui. Stay tuned! 🚀
@@ -60,6 +60,7 @@ Ikuti langkah-langkah berikut untuk mulai belajar:
 | **Modul 3**  | Percabangan                          | ✅ Ada      |
 | **Modul 4**  | Perulangan                           | ✅ Ada      |
 | **Modul 5**  | Array dan Struktur Data                 | ✅ Ada      |
+| **Modul 6**  | Fungsi dan File Handling             | ✅ Ada      |
 
 ---
 
