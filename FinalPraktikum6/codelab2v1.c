@@ -10,12 +10,35 @@ void clearInputBuffer()
     while (getchar() != '\n'); 
 }
 
-void truncateString(char *str, int maxLength)
+void potongString(char *str, int maxLength)
 {
     if (strlen(str) > maxLength)
     {
         str[maxLength] = '\0'; 
     }
+}
+
+int hitungDataMahasiswa()
+{
+    FILE *file = fopen("data_mahasiswa.txt", "r");
+    if (file == NULL)
+    {
+        return 0;
+    }
+
+    int count = 0;
+    char buffer[256];
+
+    while (fgets(buffer, sizeof(buffer), file))
+    {
+        if (strstr(buffer, "Data mahasiswa ke-") != NULL)
+        {
+            count++;
+        }
+    }
+
+    fclose(file);
+    return count;
 }
 
 void tulisDataMahasiswa()
@@ -28,33 +51,28 @@ void tulisDataMahasiswa()
     }
 
     char nama[100], nim[50], prodi[100];
+    int count = hitungDataMahasiswa();
 
     printf("Masukkan nama (maksimal %d karakter): ", MAX_NAMA);
     clearInputBuffer(); 
     fgets(nama, sizeof(nama), stdin);
     nama[strcspn(nama, "\n")] = '\0'; 
-    truncateString(nama, MAX_NAMA);
+    potongString(nama, MAX_NAMA);
 
     printf("Masukkan NIM (maksimal %d karakter): ", MAX_NIM);
     fgets(nim, sizeof(nim), stdin);
     nim[strcspn(nim, "\n")] = '\0';
-    truncateString(nim, MAX_NIM);
+    potongString(nim, MAX_NIM);
 
     printf("Masukkan Program Studi (maksimal %d karakter): ", MAX_PRODI);
     fgets(prodi, sizeof(prodi), stdin);
     prodi[strcspn(prodi, "\n")] = '\0';
-    truncateString(prodi, MAX_PRODI);
+    potongString(prodi, MAX_PRODI);
 
-    fseek(file, 0, SEEK_END);
-    if (ftell(file) == 0)
-    {
-        fprintf(file, "+------------+-----------------+---------------+\n");
-        fprintf(file, "|    Nama    |       NIM       | Program Studi |\n");
-        fprintf(file, "+------------+-----------------+---------------+\n");
-    }
-
-    fprintf(file, "| %-10s | %-13s | %-13s |\n", nama, nim, prodi);
-    fprintf(file, "+------------+-----------------+---------------+\n");
+    fprintf(file, "Data mahasiswa ke-%d\n", count + 1);
+    fprintf(file, "Nama        : %s\n", nama);
+    fprintf(file, "NIM         : %s\n", nim);
+    fprintf(file, "Program Studi: %s\n\n", prodi);
 
     fclose(file);
     printf("Data mahasiswa berhasil ditulis ke file.\n");
@@ -70,7 +88,6 @@ void bacaDataMahasiswa()
     }
 
     char buffer[256];
-    printf("\nData Mahasiswa:\n");
 
     while (fgets(buffer, sizeof(buffer), file))
     {
