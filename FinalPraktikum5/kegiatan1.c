@@ -4,93 +4,60 @@
 #define MAKSIMAL_BUAH 10
 #define MAKSIMAL_NAMA_BUAH 20
 
-#define RESET "\033[0m"
-#define MERAH "\033[31m"
-#define HIJAU "\033[32m"
-#define KUNING "\033[33m"
-#define CYAN "\033[36m"
-#define BIRU "\033[34m"
-
 int main() {
     int jumlahBuah = 0;
-    char input[10];
+    char namaBuah[MAKSIMAL_BUAH][MAKSIMAL_NAMA_BUAH];
 
-    printf(HIJAU "===============================================================\n" RESET);
-    printf(HIJAU "            Selamat datang di Program Input Buah!\n" RESET);
-    printf(HIJAU "===============================================================\n" RESET);
+    printf("===============================================================\n");
+    printf("            Selamat datang di Program Input Buah!\n");
+    printf("===============================================================\n");
 
     while (1) {
-        int valid = 1;
+        printf("Berapa banyak buah yang ingin Anda masukkan? (maksimal %d): ", MAKSIMAL_BUAH);
+        scanf("%d", &jumlahBuah);
 
-        printf(KUNING "Berapa banyak buah yang ingin Anda masukkan? (maksimal %d): " RESET, MAKSIMAL_BUAH);
-        scanf("%s", input);
-
-        for (int i = 0; input[i] != '\0'; i++) {
-            if (input[i] < '0' || input[i] > '9') {
-                valid = 0;
-                break;
-            }
-        }
-
-        if (valid) {
-            jumlahBuah = 0;
-            for (int i = 0; input[i] != '\0'; i++) {
-                jumlahBuah = jumlahBuah * 10 + (input[i] - '0'); 
-            }
-
-            if (jumlahBuah > MAKSIMAL_BUAH) {
-                printf(MERAH "===============================================================\n" RESET);
-                printf(MERAH "PERINGATAN: Anda hanya dapat memasukkan maksimal %d buah.\n" RESET, MAKSIMAL_BUAH);
-                jumlahBuah = MAKSIMAL_BUAH;
-                break;
-            } else if (jumlahBuah <= 0) {
-                printf(MERAH "===============================================================\n" RESET);
-                printf(MERAH "PERINGATAN: Jumlah buah harus lebih dari 0.\n" RESET);
-            } else {
-                break;
-            }
+        if (jumlahBuah > 0 && jumlahBuah <= MAKSIMAL_BUAH) {
+            break;
+        } else if (jumlahBuah > MAKSIMAL_BUAH) {
+            printf("PERINGATAN: Anda hanya dapat memasukkan maksimal %d buah.\n", MAKSIMAL_BUAH);
         } else {
-            printf(MERAH "===============================================================\n" RESET);
-            printf(MERAH "ERROR: Masukkan angka yang valid!\n\a" RESET);
-            printf(MERAH "===============================================================\n" RESET);
+            printf("ERROR: Jumlah buah harus lebih dari 0!\n");
         }
     }
 
-    char namaBuah[MAKSIMAL_BUAH][MAKSIMAL_NAMA_BUAH];
-    printf(CYAN "===============================================================\n" RESET);
-    printf(CYAN "Silakan masukkan nama buah:\n" RESET);
+    printf("\nSilakan masukkan nama buah:\n");
     for (int i = 0; i < jumlahBuah; i++) {
         while (1) {
-            printf(BIRU "  - Nama buah ke-%d: " RESET, i + 1);
-            scanf(" %s", namaBuah[i]);
+            printf("  - Nama buah ke-%d: ", i + 1);
+            scanf(" %s", namaBuah[i]); 
 
+            int panjangNama = strlen(namaBuah[i]);
             int valid = 1;
 
-            for (int j = 0; namaBuah[i][j] != '\0'; j++) {
-                if (!((namaBuah[i][j] >= 'A' && namaBuah[i][j] <= 'Z') ||
-                      (namaBuah[i][j] >= 'a' && namaBuah[i][j] <= 'z') ||
+            for (int j = 0; j < panjangNama; j++) {
+                if (!((namaBuah[i][j] >= 'A' && namaBuah[i][j] <= 'Z') || 
+                      (namaBuah[i][j] >= 'a' && namaBuah[i][j] <= 'z') || 
                       namaBuah[i][j] == ' ')) {
                     valid = 0;
                     break;
                 }
             }
 
-            if (strlen(namaBuah[i]) == 0) {
-                printf(MERAH "  ERROR: Nama buah tidak boleh kosong!\n" RESET);
-            } else if (strlen(namaBuah[i]) > MAKSIMAL_NAMA_BUAH - 1) {
-                printf(MERAH "  ERROR: Nama buah terlalu panjang (maksimal %d karakter)!\n" RESET, MAKSIMAL_NAMA_BUAH - 1);
+            if (panjangNama == 0) {
+                printf("ERROR: Nama buah tidak boleh kosong!\n");
+            } else if (panjangNama > MAKSIMAL_NAMA_BUAH - 1) {
+                printf("ERROR: Nama buah terlalu panjang (maksimal %d karakter)!\n", MAKSIMAL_NAMA_BUAH - 1);
             } else if (!valid) {
-                printf(MERAH "  ERROR: Nama buah hanya boleh berisi huruf dan spasi!\n" RESET);
+                printf("ERROR: Nama buah hanya boleh berisi huruf dan spasi!\n");
             } else {
                 break;
             }
         }
     }
 
-    printf(HIJAU "===============================================================\n" RESET);
-    printf(HIJAU "Berikut daftar buah yang Anda masukkan:\n" RESET);
+    printf("Berikut daftar buah yang Anda masukkan:\n");
     for (int i = 0; i < jumlahBuah; i++) {
-        printf(KUNING "  %d. %s\n" RESET, i + 1, namaBuah[i]);
+        printf("  %d. %s\n", i + 1, namaBuah[i]);
     }
 
     for (int i = 0; i < jumlahBuah - 1; i++) {
@@ -104,15 +71,10 @@ int main() {
         }
     }
 
-    printf(CYAN "===============================================================\n" RESET);
-    printf(CYAN "Nama buah dalam urutan abjad:\n" RESET);
+    printf("Nama buah dalam urutan abjad:\n");
     for (int i = 0; i < jumlahBuah; i++) {
-        printf(KUNING "  %d. %s\n" RESET, i + 1, namaBuah[i]);
+        printf("  %d. %s\n", i + 1, namaBuah[i]);
     }
-
-    printf(HIJAU "===============================================================\n" RESET);
-    printf(HIJAU "         Terima kasih telah menggunakan program ini!\n" RESET);
-    printf(HIJAU "===============================================================\n" RESET);
 
     return 0;
 }
