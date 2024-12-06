@@ -91,7 +91,7 @@ void updateProduk()
             fprintf(temp, "Harga    : %.2lf\n", harga);
             fprintf(temp, "Stok     : %d\n\n", stok);
 
-            // mengabaikan 4 baris setekah id
+            // mengabaikan 4 baris setelah id
             fgets(buffer, sizeof(buffer), file);
             fgets(buffer, sizeof(buffer), file);
             fgets(buffer, sizeof(buffer), file);
@@ -137,7 +137,7 @@ void hapusProduk()
         if (sscanf(buffer, "ID       : %s", id) == 1 && strcmp(id, cariId) == 0)
         {
             ditemukan = 1;
-            // mengabaikan 4 baris setekah id
+            // mengabaikan 4 baris setelah id
             fgets(buffer, sizeof(buffer), file);
             fgets(buffer, sizeof(buffer), file);
             fgets(buffer, sizeof(buffer), file);

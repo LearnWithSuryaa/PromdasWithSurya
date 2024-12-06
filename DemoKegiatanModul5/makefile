@@ -1,30 +1,43 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -std=c99
-OBJ = main.o utility.o input.o output.o calculation.o
+# Nama program yang akan dihasilkan
 TARGET = surya
 
-all: $(TARGET)
+# Compiler dan opsi kompilasi
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
 
-$(TARGET): $(OBJ)
-	$(CC) -o $(TARGET) $(OBJ)
+# Direktori sumber dan objek
+SRC_DIR = .
+OBJ_DIR = obj
 
-main.o: main.c utility.h input.h output.h calculation.h
-	$(CC) $(CFLAGS) -c main.c
+# File sumber
+SRCS = main.c calculation.c input.c output.c utility.c
 
-utility.o: utility.c utility.h
-	$(CC) $(CFLAGS) -c utility.c
+# File objek
+OBJS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(SRCS))
 
-input.o: input.c input.h utility.h
-	$(CC) $(CFLAGS) -c input.c
+# File header
+HEADERS = calculation.h input.h output.h utility.h
 
-output.o: output.c output.h utility.h
-	$(CC) $(CFLAGS) -c output.c
+# Rule untuk membuat direktori objek jika belum ada
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
-calculation.o: calculation.c calculation.h utility.h
-	$(CC) $(CFLAGS) -c calculation.c
+# Rules untuk kompilasi objek
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS) | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
+# Rule untuk membuat program
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+# Rule untuk membersihkan objek dan executable
+clean:
+	rm -rf $(OBJ_DIR) $(TARGET)
+
+# Rule untuk menjalankan program
 run: $(TARGET)
 	./$(TARGET)
 
-clean:
-	rm -f *.o $(TARGET)
+# Rule default
+.PHONY: all clean run
+all: $(TARGET)
