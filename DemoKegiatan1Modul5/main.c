@@ -12,7 +12,12 @@ int main()
     do
     {
         printf("\nBerapa banyak buah yang ingin Anda masukkan? (maksimal %d): ", MAKSIMAL_BUAH);
-        scanf("%d", &jumlahBuah);
+        if (scanf("%d", &jumlahBuah) != 1)
+        {
+            printf("%s%sInputan tidak valid. Mohon masukkan angka!\n%s", MERAH, TEBAL, RESET);
+            clearInputBuffer();
+            continue;
+        }
 
         if (jumlahBuah <= 0)
         {
