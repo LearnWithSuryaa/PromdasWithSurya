@@ -26,7 +26,7 @@ int main()
 
         if (jumlahBuah > MAKSIMAL_BUAH)
         {
-            printf("%s%sPeringatan inputan tidak boleh lebih dari %d\n%s", MERAH, TEBAL, MAKSIMAL_BUAH, RESET);
+            printf("%s%sPeringatan inputan tidak boleh lebih dari %d.s\n%s", MERAH, TEBAL, MAKSIMAL_BUAH, RESET);
         }
 
     } while (jumlahBuah <= 0 || jumlahBuah > MAKSIMAL_BUAH);
